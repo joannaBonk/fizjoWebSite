@@ -1,0 +1,346 @@
+:root {
+	--dark-color: #181717;
+	--gray-color: #3a3838;
+	--white: #e0dddd;
+	--orange: #fda90d;
+}
+
+@keyframes pulse {
+	from {
+		transform: scale(1);
+		opacity: 0.5;
+	}
+	to {
+		transform: scale(1.4);
+		opacity: 0;
+	}
+}
+@keyframes pulse {
+	from {
+		transform: scale(1);
+		opacity: 0.5;
+	}
+	to {
+		transform: scale(1.4);
+		opacity: 0;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #003441;
+}
+
+section {
+	scroll-margin-top: 8vh;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.section-title {
+	position: relative;
+	margin: 40px auto;
+	font-size: 2rem;
+	color: var(--orange);
+	text-transform: uppercase;
+	font-weight: 900;
+	width: fit-content;
+  }
+  .section-title::before {
+	content: "";
+	position: absolute;
+	bottom: -0.1em;
+	left: 0;
+	width: 30%;
+	height: 2px;
+	background-color: var(--orange);
+  }
+
+  section p {
+	color: var(--white);
+	font-size: 18px;
+	line-height: 1.2;
+	padding: 10px 20px;
+  }
+
+
+/* NAV */
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 8vh;
+	width: 100%;
+	margin: 0 auto;
+	background-color: var(--dark-color);
+	z-index: 100;
+}
+
+nav .logo {
+	padding: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	color: var(--white);
+}
+
+nav .logo span,
+i {
+	color: var(--orange);
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.nav-desktop {
+	display: none;
+}
+
+.nav-mobile {
+	padding-top: 100px;
+	position: absolute;
+	top: 0;
+	height: 100vh;
+	width: 350px;
+	right: -350px;
+	list-style: none;
+	background-color: var(--dark-color);
+	transition: transform 0.3s;
+}
+
+.nav-item {
+	width: 100%;
+}
+
+.nav-item a {
+	display: block;
+	height: 100%;
+	padding: 20px 30px;
+	color: rgb(253, 169, 13);
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: font-weight, 0.3s ease;
+}
+
+.nav-item a:hover {
+	font-weight: bold;
+}
+
+.burger-icon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 8vh;
+	padding: 10px 20px;
+	font-size: 36px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	transition: transform 0.3s;
+}
+
+.burger-icon:hover {
+	background-color: var(--gray-color);
+}
+
+/* HEADER */
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	height: 100vh;
+	background-image: url(../img/massage2-small.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.hero-bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-text {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 50%;
+	color: var(--white);
+	letter-spacing: 2px;
+	font-size: 20px;
+	text-shadow: 3px 3px 5px #000;
+}
+
+.hero-text h1 {
+	margin-bottom: 20px;
+}
+
+.hero-text span {
+	text-transform: uppercase;
+	color: var(--orange);
+}
+
+.header-arrow {
+	display: none;
+}
+
+/* MAIN */
+
+main {
+	margin: 80px 0;
+}
+
+/* ABOUT */
+
+.about{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	height: 850px;
+	margin-bottom: 10px;
+	padding: 0 20px;
+}
+
+.about-body{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50px 20px ;
+	height: 80%;
+	width: 100%;
+
+}
+
+.about-img{
+	height: 100%;
+	width: 400px;
+	background-size: cover;
+	background-position: center;
+	background-image: url(../img/woman.jpg);
+	box-shadow: 3px 3px 5px #000;;
+}
+
+.about-info{
+	height: 100%;
+	width: 40%;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.active {
+	transform: translateX(-350px);
+}
+
+.hide {
+	display: none;
+}
+
+@media (min-width: 992px) {
+	nav .logo {
+		padding: 15px;
+		font-size: 22px;
+	}
+	.burger-icon {
+		display: none;
+	}
+
+	.nav-desktop {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		list-style: none;
+	}
+
+	.nav-item {
+		width: 15%;
+	}
+
+	.nav-mobile {
+		display: none;
+	}
+	.header{
+		background-image: url(../img/massage2-large.jpg);
+	}
+
+	.hero-text{
+		font-size: 30px;
+	}
+
+	.header-arrow {
+		display: block;
+		position: absolute;
+		bottom: 2em;
+		left: 48%;
+		padding: 2em;
+		transform: translateX(-50%);
+		border: 1px solid var(--orange);
+		border-radius: 50%;
+	}
+	.header-arrow::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 1px solid var(--orange);
+		border-radius: 50%;
+		animation: pulse 2s infinite;
+	}
+	.header-arrow-icon {
+		width: 50px;
+
+	}
+}
+
+/* @media (min-width: 992px) {
+	.burger-icon {
+		display: none;
+	}
+	nav .desktop {
+		display: block;
+	}
+	nav .mobile {
+		display: none;
+	}
+} */
